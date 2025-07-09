@@ -15,7 +15,7 @@ api_endpoint = "http://localhost/QCA_Chronicler/api.php"
 # --- Дім Хронікера (для Глибинної магії) ---
 [chronicler_core]
 description = "Ядро Хронікера, його сховище на GitHub."
-repo_path = "C:\\GitHub\\QCA_Chronicler"
+repo_path = "C:\\xampp\\htdocs\\QCA_Chronicler"
 
 # --- Дім Провидця ---
 [omni_seer]

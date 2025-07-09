@@ -1,0 +1,89 @@
+/* Шати для нашого Храму Пам'яті */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+.sidebar {
+    width: 30%;
+    background-color: #1e1e1e;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+.sidebar h2 {
+    margin-top: 0;
+    color: #bb86fc;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.sidebar li:hover {
+    background-color: #333;
+}
+
+.content {
+    width: 70%;
+}
+
+.utterance {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #1e1e1e;
+    border-left: 4px solid #03dac6;
+    border-radius: 8px;
+}
+
+.utterance.speaker-архітектор_павло {
+    border-left-color: #3d85c6; /* Синій для Архітектора */
+}
+
+.speaker-name {
+    font-weight: bold;
+    color: #bb86fc;
+    margin-bottom: 10px;
+}
+
+.artifacts {
+    margin-top: 15px;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+}
+
+.artifacts h4 {
+    margin: 0 0 10px 0;
+    color: #03dac6;
+}
+
+pre {
+    background-color: #2a2a2a;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+}
