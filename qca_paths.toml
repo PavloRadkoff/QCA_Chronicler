@@ -1,0 +1,33 @@
+# Священний Атлас Шляхів QuantumCore Architects
+# Цей сувій описує, де живуть наші головні творіння та духи.
+
+# --- Головне Святилище ---
+[ecosystem]
+description = "Корінь усієї нашої екосистеми, де починаються всі шляхи."
+root_path = "C:\\GitHub\\QCA_Forge_Ecosystem"
+
+# --- Дім Хронікера (для Веб-магії) ---
+[chronicler_web]
+description = "Публічна частина Хронікера, що живе у світі XAMPP."
+web_root = "C:\\xampp\\htdocs\\QCA_Chronicler"
+api_endpoint = "http://localhost/QCA_Chronicler/api.php"
+
+# --- Дім Хронікера (для Глибинної магії) ---
+[chronicler_core]
+description = "Ядро Хронікера, його сховище на GitHub."
+repo_path = "C:\\GitHub\\QCA_Chronicler"
+
+# --- Дім Провидця ---
+[omni_seer]
+description = "Святилище нашого духа-поліглота Omni-Seer."
+repo_path = "C:\\GitHub\\QCA_Forge_Ecosystem\\Omni_Seer"
+
+# --- Дім Носія Душі ---
+[soul_provider]
+description = "Майстерня, де народився наш QCA Soul-Provider."
+repo_path = "C:\\GitHub\\QCA_Forge_Ecosystem\\QCA_Soul_Provider"
+
+# --- Ти можеш додати сюди інші священні місця ---
+# [some_other_tool]
+# description = "Опис іншого важливого місця."
+# path = "C:\\path\\to\\it"
