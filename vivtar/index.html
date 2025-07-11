@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дихаючий Вівтар Улюблених Шляхів</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Дихаючий Вівтар Улюблених Шляхів</h1>
+
+    <details open>
+        <summary>Панель Архітектора</summary>
+        <div class="settings-panel">
+            <label>
+                Кількість колонок:
+                <input type="range" id="columns-input" min="1" max="6" value="3">
+            </label>
+            <label>
+                Тло Вівтаря (URL):
+                <input type="text" id="bg-image-input" placeholder="Введіть URL зображення">
+            </label>
+            <label>
+                Світла тема:
+                <input type="checkbox" id="theme-toggle">
+            </label>
+            <label>
+                Показати Тотем QCA:
+                <input type="checkbox" id="totem-toggle" checked>
+            </label>
+            <button id="add-bookmark-btn">Додати Закладку</button>
+        </div>
+    </details>
+
+    <main id="vivtar-container"></main>
+
+    <dialog id="bookmark-modal">
+        <form id="bookmark-form">
+            <h2 id="modal-title">Додати Закладку</h2>
+            <label>
+                Категорія:
+                <input type="text" id="category-input" list="category-list" required>
+                <datalist id="category-list"></datalist>
+            </label>
+            <label>
+                Назва:
+                <input type="text" id="name-input" required>
+            </label>
+            <label>
+                URL:
+                <input type="url" id="url-input" required>
+            </label>
+            <button type="submit">Зберегти</button>
+            <button type="button" id="cancel-btn">Скасувати</button>
+        </form>
+    </dialog>
+
+    <div id="totem"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>

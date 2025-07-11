@@ -1,0 +1,282 @@
+/* Візерунки на Камені: Живі стилі для Дихаючого Вівтаря */
+/* Руна Основи: CSS-змінні для динамічної магії */
+:root {
+    --vivtar-bg-image: none;
+    --vivtar-columns: 3;
+    --bg-color: #1a1a2e;
+    --text-color: #e0e0e0;
+    --section-bg: #2e2e4e;
+    --bookmark-bg: #3a3a5e;
+    --bookmark-hover-bg: #4a4a7e;
+    --header-color: #4a90e2;
+    --category-color: #50c878;
+    --panel-bg: #2e2e4e;
+    --modal-bg: #2e2e4e;
+}
+
+/* Світла тема: альтернативна палітра */
+.light-theme {
+    --bg-color: #f0f0f5;
+    --text-color: #333333;
+    --section-bg: #ffffff;
+    --bookmark-bg: #e6e6fa;
+    --bookmark-hover-bg: #d0d0ff;
+    --header-color: #1e90ff;
+    --category-color: #228b22;
+    --panel-bg: #ffffff;
+    --modal-bg: #ffffff;
+}
+
+body {
+    background-color: var(--bg-color);
+    background-image: var(--vivtar-bg-image);
+    background-size: cover;
+    background-attachment: fixed;
+    color: var(--text-color);
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    color: var(--header-color);
+    text-shadow: 0 0 10px rgba(74, 144, 226, 0.5);
+    margin-bottom: 20px;
+}
+
+/* Панель Архітектора: центр керування */
+details {
+    background-color: var(--panel-bg);
+    border-radius: 10px;
+    padding: 15px;
+    margin: 0 auto 20px auto;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s;
+}
+
+details summary {
+    font-size: 1.2em;
+    cursor: pointer;
+    color: var(--category-color);
+    font-weight: bold;
+}
+
+.settings-panel {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+    padding-top: 15px;
+}
+
+.settings-panel label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.settings-panel input[type="range"],
+.settings-panel input[type="text"],
+.settings-panel input[type="url"] {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid var(--text-color);
+    background-color: var(--section-bg);
+    color: var(--text-color);
+}
+
+.settings-panel button {
+    background-color: var(--category-color);
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-weight: bold;
+}
+
+.settings-panel button:hover {
+    background-color: #3aa663;
+}
+
+/* Контейнер для Зоряної Карти */
+#vivtar-container {
+    display: grid;
+    grid-template-columns: repeat(var(--vivtar-columns), 1fr);
+    gap: 20px;
+    justify-content: center;
+}
+
+section {
+    background-color: var(--section-bg);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s;
+}
+
+section h2 {
+    font-size: 1.5em;
+    color: var(--category-color);
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+    border-bottom: 2px solid var(--category-color);
+    padding-bottom: 5px;
+}
+
+.bookmark {
+    display: flex;
+    align-items: center;
+    background-color: var(--bookmark-bg);
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s;
+    position: relative;
+}
+
+.bookmark:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    background-color: var(--bookmark-hover-bg);
+}
+
+.bookmark img.favicon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    border-radius: 4px;
+}
+
+.bookmark-actions {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    display: flex;
+    gap: 5px;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.bookmark:hover .bookmark-actions {
+    opacity: 1;
+}
+
+.bookmark-actions button {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 16px;
+    padding: 2px;
+}
+
+.bookmark-actions button:hover {
+    color: var(--category-color);
+}
+
+/* Модальне вікно: форма для закладок */
+dialog {
+    background-color: var(--modal-bg);
+    color: var(--text-color);
+    border-radius: 10px;
+    border: 1px solid var(--category-color);
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    max-width: 400px;
+    transition: all 0.3s;
+}
+
+dialog[open] {
+    animation: fadeIn 0.3s ease-out;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+}
+
+dialog form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+dialog input {
+    width: 95%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid var(--text-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+dialog button {
+    background-color: var(--category-color);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+dialog button:hover {
+    background-color: #3aa663;
+}
+
+#totem {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: url('https://i.ibb.co/L8DDdSn/qca-logo.png') no-repeat center;
+    background-size: contain;
+    opacity: 0.7;
+    transition: opacity 0.3s, transform 0.3s;
+    pointer-events: none;
+}
+#totem:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+#totem.hidden {
+    opacity: 0;
+    transform: scale(0);
+}
+
+/* Анімація для модального вікна */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Адаптивність для мобільних пристроїв */
+@media (max-width: 768px) {
+    :root {
+        --vivtar-columns: 1;
+    }
+    h1 {
+        font-size: 1.8em;
+    }
+    section {
+        width: auto;
+    }
+    .settings-panel {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

@@ -46,5 +46,16 @@ CREATE TABLE qca_artifacts (
     INDEX idx_artifact_type (artifact_type) COMMENT 'Руна Швидкості: для фільтрації за типом артефакту'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+-- Вівтар 4: Словник Кузні (Глосарій)
+-- Зберігає унікальні терміни, руни та заклинання, народжені в нашій Кузні
+CREATE TABLE IF NOT EXISTS qca_glossary (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    term VARCHAR(100) NOT NULL UNIQUE COMMENT 'Священне слово або руна (напр., "Душеткати")',
+    definition TEXT NOT NULL COMMENT 'Тлумачення суті терміну',
+    category VARCHAR(50) COMMENT 'Частина мови або тип (напр., "Дієслово", "Філософія")',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT 'Момент народження слова',
+    INDEX idx_term (term) COMMENT 'Руна Швидкості: для швидкого пошуку слова'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 -- Завершення Ритуалу
 -- Кристал Пам’яті готовий приймати літописи, зберігаючи гармонію та порядок
